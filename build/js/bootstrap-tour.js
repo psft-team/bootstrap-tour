@@ -576,6 +576,7 @@ var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); 
         title: step.title,
         content: step.content,
         html: true,
+        sanitize: false,
         animation: step.animation,
         container: step.container,
         template: step.template,
@@ -635,7 +636,7 @@ var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); 
       height = $element.outerHeight();
       windowHeight = $window.height();
       scrollTop = 0;
-      switch (step.placement) {
+      switch (step.placement.replace('auto', '').trim()) {
         case 'top':
           scrollTop = Math.max(0, offsetTop - (windowHeight / 2));
           break;

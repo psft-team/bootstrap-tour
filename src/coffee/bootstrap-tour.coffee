@@ -508,7 +508,8 @@
         trigger: 'manual'
         title: step.title
         content: step.content
-        html: true
+        html: true,
+        sanitize: false
         animation: step.animation
         container: step.container
         template: step.template
